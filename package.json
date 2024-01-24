@@ -25,7 +25,7 @@
   ],
   "author": "Metin Jakupi <contact@metinjakupi.dev>",
   "license": "MIT",
-  "homepage": "https://metinjakupi.dev",
+  "homepage": "https://vue-marquee-demo.vercel.app/",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
