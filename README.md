@@ -36,7 +36,7 @@ yarn add @mjakupi/vue-marquee
 
 <script>
 import { Marquee } from "@mjakupi/vue-marquee";
-
+import '@mjakupi/vue-marquee/dist/style.css'
 export default {
   components: {
     Marquee
@@ -68,7 +68,7 @@ export default {
 <script setup lang="ts">
 import { ref } from 'vue';
 import { Marquee } from "@mjakupi/vue-marquee";
-
+import '@mjakupi/vue-marquee/dist/style.css'
 const marqueeItems = ref([
   { text: 'Item 1' },
   { text: 'Item 2' },
