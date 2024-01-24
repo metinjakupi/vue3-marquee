@@ -8,8 +8,8 @@
   </section>
 </template>
 <script lang="ts">
-import {defineComponent, PropType} from 'vue';
-import {useMarquee} from "../composable/useMarquee.ts";
+
+import {computed, defineComponent, PropType} from 'vue';
 
 export default defineComponent({
   name: 'Marquee',
@@ -33,8 +33,19 @@ export default defineComponent({
     }
   },
   setup(props) {
-    const {marqueeStyle, itemStyle} = useMarquee(props.items, props.speed)
-    return {marqueeStyle, itemStyle};
+    const marqueeStyle = computed(() => ({
+      '--count': props.items.length,
+      '--speed': props.speed,
+    }));
+
+    const itemStyle = (index: number) => ({
+      '--index': index.toString(),
+      '--rtl-index': (props.items.length - index - 1).toString(),
+    });
+    return {
+      marqueeStyle,
+      itemStyle
+    }
   },
 });
 </script>

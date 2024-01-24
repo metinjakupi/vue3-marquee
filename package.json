@@ -1,13 +1,12 @@
 {
   "name": "@mjakupi/vue-marquee",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A Vue 3 component for creating smooth marquee animations.",
   "main": "dist/vue-marquee.umd.js",
   "module": "dist/vue-marquee.mjs",
   "types": "dist/index.d.ts",
   "files": [
     "dist/components/*",
-    "dist/composable/*",
     "dist/style.css",
     "dist/*.svg",
     "dist/*.mjs",
