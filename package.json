@@ -1,0 +1,46 @@
+{
+  "name": "@mjakupi/vue-marquee",
+  "version": "1.0.0",
+  "description": "A Vue 3 component for creating smooth marquee animations.",
+  "main": "dist/vue-marquee.umd.js",
+  "module": "dist/vue-marquee.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/components/*",
+    "dist/composable/*",
+    "dist/style.css",
+    "dist/*.svg",
+    "dist/*.mjs",
+    "dist/*.umd.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/metinjakupi/vue3-marquee"
+  },
+  "keywords": [
+    "vue",
+    "marquee",
+    "animation",
+    "vue3",
+    "component"
+  ],
+  "author": "Metin Jakupi <contact@metinjakupi.dev>",
+  "license": "MIT",
+  "homepage": "https://metinjakupi.dev",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "vite-plugin-dts": "^3.7.2",
+    "@vitejs/plugin-vue": "^4.5.2",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8",
+    "vue-tsc": "^1.8.25"
+  }
+}
