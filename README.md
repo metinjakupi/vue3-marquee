@@ -1,4 +1,5 @@
 # Vue3 Marquee
+[![npm](https://img.shields.io/npm/v/@mjakupi/vue-marquee)](https://www.npmjs.com/package/@mjakupi/vue-marquee)
 
 Vue3 Marquee is a Vue 3 component designed to create smooth and customizable marquee animations easily. It's built with Vue 3 and TypeScript, offering a modern and efficient way to add marquee effects to your Vue projects.
 
@@ -80,4 +81,4 @@ const isRtl = ref(false);
 Contributions are always welcome! Feel free to open an issue or submit a pull request.
 
 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+MIT License
