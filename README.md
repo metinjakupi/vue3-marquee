@@ -18,11 +18,12 @@ or
 yarn add @mjakupi/vue-marquee
 ```
 ## Props
-- items: An array of items to be displayed in the marquee.
-- speed: The speed of the marquee animation (default: 20).
-- direction: The direction of the marquee ('horizontal' or 'vertical').
-- rtl: Reverse.
-
+ - items: An array of items to be displayed in the marquee.
+ - speed: The speed of the marquee animation, with a default value of 20.
+ - direction: The direction of the marquee, which can be either 'horizontal' or 'vertical'.
+ - rtl: A Boolean indicating whether the marquee should display in reverse (right-to-left) order.
+ - outset: A numeric value specifying the outset of the marquee, with valid values ranging from -0.5 to 3.
+ - rtlOutset: A numeric value specifically for right-to-left (RTL) layouts, controlling the outset when rtl is true. The valid range is from -3 to -0.5.
 
 ## Importing and Using the Component in Options API
 ```
