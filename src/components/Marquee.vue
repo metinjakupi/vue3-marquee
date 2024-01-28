@@ -19,12 +19,12 @@ export default defineComponent({
     outset: {
       type: Number,
       default: 0,
-      validator: (value: number): boolean => value >= 0 && value <= 3,
+      validator: (value: number): boolean => value >= -0.5 && value <= 3,
     },
     rtlOutset: {
       type: Number,
-      default: -2,
-      validator: (value: number): boolean => value >= -3 && value <= -1,
+      default: -1,
+      validator: (value: number): boolean => value >= -3 && value <= -0.5,
     },
     items: {
       type: Array as PropType<Array<any>>,
