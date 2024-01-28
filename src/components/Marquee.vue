@@ -1,15 +1,5 @@
-<template>
-  <section class="marquee-container" :style="marqueeStyle" :rtl="rtl" :dir="direction">
-    <div class="marquee-wrapper">
-      <div class="marquee-item" v-for="(item, index) in items" :key="index" :style="itemStyle(index)">
-        <slot :item="item"></slot>
-      </div>
-    </div>
-  </section>
-</template>
 <script lang="ts">
-
-import {computed, defineComponent, PropType} from 'vue';
+import { computed, defineComponent, PropType } from 'vue';
 
 export default defineComponent({
   name: 'Marquee',
@@ -21,6 +11,20 @@ export default defineComponent({
     speed: {
       type: Number,
       default: 20,
+    },
+    gap: {
+      type: Number,
+      default: 0,
+    },
+    outset: {
+      type: Number,
+      default: 0,
+      validator: (value: number): boolean => value >= 0 && value <= 3,
+    },
+    rtlOutset: {
+      type: Number,
+      default: -2,
+      validator: (value: number): boolean => value >= -3 && value <= -1,
     },
     items: {
       type: Array as PropType<Array<any>>,
@@ -36,8 +40,9 @@ export default defineComponent({
     const marqueeStyle = computed(() => ({
       '--count': props.items.length,
       '--speed': props.speed,
+      '--outset': props.outset,
+      '--rtl-outset': props.rtlOutset,
     }));
-
     const itemStyle = (index: number) => ({
       '--index': index.toString(),
       '--rtl-index': (props.items.length - index - 1).toString(),
@@ -49,6 +54,18 @@ export default defineComponent({
   },
 });
 </script>
+
+
+<template>
+  <section class="marquee-container" :style="marqueeStyle" :rtl="rtl" :dir="direction">
+    <div class="marquee-wrapper">
+      <div class="marquee-item" v-for="(item, index) in items" :key="index" :style="itemStyle(index)">
+        <slot :item="item"></slot>
+      </div>
+    </div>
+  </section>
+</template>
+
 
 <style>
 .marquee-container {
@@ -82,6 +99,7 @@ export default defineComponent({
   height: 100%;
   width: fit-content;
   align-items: center;
+  overflow: hidden;
 }
 
 .marquee-container[dir=vertical] .marquee-wrapper {
@@ -115,7 +133,6 @@ export default defineComponent({
   /* Common styling for list items */
   .marquee-item {
     --inset: 0;
-    --outset: 0;
     --duration: calc(var(--speed) * 1s);
     --base-delay: calc(var(--duration) / var(--count));
     --index-adjustment: calc(var(--index, 0) - (var(--count) * 0.5));
@@ -141,17 +158,16 @@ export default defineComponent({
 
   /* Adjustments for RTL (right-to-left) list items */
   .marquee-container[rtl=true] .marquee-item {
-    --inset: 1;
-    --outset: -1;
+    --rtl-inset: 1;
     --rtl-index-adjustment: calc(var(--rtl-index, 0) - (var(--count) * 0.5));
     --delay: calc(var(--base-delay) * var(--rtl-index-adjustment));
   }
 
   /* Styling for horizontal RTL list items */
   .marquee-container[dir=horizontal][rtl="true"] .marquee-item {
-    --origin-x: calc(((var(--rtl-index) - var(--count)) - var(--inset)) * 100%);
+    --origin-x: calc(((var(--rtl-index) - var(--count)) - var(--rtl-inset)) * 100%);
     --origin-y: 0;
-    --x: calc(((var(--rtl-index) - 1 - var(--outset)) * 100%));
+    --x: calc(((var(--rtl-index) - 1 - var(--rtl-outset)) * 100%));
     --y: 0;
   }
 

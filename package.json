@@ -1,6 +1,6 @@
 {
   "name": "@mjakupi/vue-marquee",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "A Vue 3 component for creating smooth marquee animations.",
   "main": "dist/vue-marquee.umd.js",
   "module": "dist/vue-marquee.mjs",
@@ -23,7 +23,7 @@
     "vue3",
     "component"
   ],
-  "author": "Metin Jakupi <contact@metinjakupi.dev>",
+  "author": "Metin Jakupi <mjakupi1@outlook.com>",
   "license": "MIT",
   "homepage": "https://vue-marquee-demo.vercel.app/",
   "scripts": {
